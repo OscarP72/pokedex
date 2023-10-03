@@ -37,7 +37,9 @@ const App = () => {
   return (
     <div className="App">
       <div className="TitleSection">
-        <h1>Pokédex</h1>
+        <img src="/logo.png" alt="Logo" className="Logo"/>
+       
+    
         <input
           type="text"
           onChange={(event) => {
@@ -49,9 +51,9 @@ const App = () => {
         {pokemonName && <button onClick={searchPokemon}>Busqueda de Pokémon</button>}
         </div>
       </div>
-      <div className="DisplaySection">
+          <div className="DisplaySection">
         {!pokemonChosen ? (
-          <h1> Please choose a Pokémon </h1>
+          <h1> Elige un Pokemon </h1>
         ) : (
           <>
             <h1>{pokemon.name}</h1>
@@ -67,6 +69,7 @@ const App = () => {
         )}
       </div>
     </div>
+    
   );
 };
 
