@@ -37,9 +37,8 @@ const App = () => {
   return (
     <div className="App">
       <div className="TitleSection">
-        <img src="/logo.png" alt="Logo" className="Logo"/>
-       
-    
+        <img src="/logo.png" alt="Logo" className="Logo" />
+
         <input
           type="text"
           onChange={(event) => {
@@ -48,14 +47,16 @@ const App = () => {
           value={pokemonName.toLocaleLowerCase()}
         />
         <div>
-        {pokemonName && <button onClick={searchPokemon}>Busqueda de Pokémon</button>}
+          {pokemonName && (
+            <button onClick={searchPokemon}>Busqueda de Pokémon</button>
+          )}
         </div>
       </div>
-          <div className="DisplaySection">
+      <div className="DisplaySection">
         {!pokemonChosen ? (
           <h1> Elige un Pokemon </h1>
         ) : (
-          <>
+          <div className="PokemonCard">
             <h1>{pokemon.name}</h1>
             <img src={pokemon.image} alt={pokemon.name} />
             <h3>Number: #{pokemon.number}</h3>
@@ -65,11 +66,10 @@ const App = () => {
             <h4>Attack: {pokemon.attack}</h4>
             <h4>Defense: {pokemon.defense}</h4>
             <h4>Speed: {pokemon.speed}</h4>
-          </>
+          </div>
         )}
       </div>
     </div>
-    
   );
 };
 
